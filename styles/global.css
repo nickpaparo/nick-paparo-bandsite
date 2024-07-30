@@ -1,1 +1,20 @@
-/*# sourceMappingURL=global.css.map */
+@font-face {
+  font-family: "Avenir Next", Arial, Helvetica, sans-serif;
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("otf");
+  src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Regular) format("ttf");
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("otf");
+  src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Bold) format("ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("otf");
+  src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Demi) format("ttf");
+  font-weight: 600;
+}
+body {
+  margin: auto;
+}/*# sourceMappingURL=global.css.map */

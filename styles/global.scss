@@ -2,3 +2,18 @@
 @use "./partials/global" as *;
 @use "./partials/mixins" as *;
 @use "./partials/variables" as *;
+
+body {
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    @include tablet {
+        margin-left: 2.25rem;
+        margin-right: 2.25rem;
+    }
+
+    @include desktop {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
