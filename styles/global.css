@@ -1,20 +1,51 @@
 @font-face {
   font-family: "Avenir Next", Arial, Helvetica, sans-serif;
-  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("otf");
-  src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Regular) format("ttf");
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");
+  src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Regular) format("truetype");
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("otf");
-  src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Bold) format("ttf");
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
+  src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Bold) format("truetype");
   font-weight: 700;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("otf");
-  src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Demi) format("ttf");
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype");
+  src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Demi) format("truetype");
   font-weight: 600;
 }
+* ::before ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  margin: auto;
+  font-size: 16px;
+}
+@media (min-width: 767px) {
+  body {
+    margin-left: 2.25rem;
+    margin-right: 2.25rem;
+  }
+}
+@media (min-width: 1279px) {
+  body {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.header, .nav {
+  background-color: #323232;
+  display: flex;
+}
+
+.nav {
+  flex-direction: column;
+}
+.nav__logo {
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=global.css.map */

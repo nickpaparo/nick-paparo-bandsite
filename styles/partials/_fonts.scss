@@ -2,23 +2,23 @@
 
 @font-face {
   font-family: "Avenir Next", Arial, Helvetica, sans-serif;
-  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("otf");
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");
   src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Regular)
-    format("ttf");
+    format("truetype");
 }
 
 @font-face {
   font-family: $base-font;
-  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("otf");
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
   src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Bold)
-    format("ttf");
+    format("truetype");
   font-weight: 700;
 }
 
 @font-face {
   font-family: $base-font;
-  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("otf");
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype");
   src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Demi)
-    format("ttf");
+    format("truetype");
   font-weight: 600;
 }

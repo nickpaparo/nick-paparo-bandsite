@@ -1,17 +1,281 @@
 @font-face {
   font-family: "Avenir Next", Arial, Helvetica, sans-serif;
-  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("otf");
-  src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Regular) format("ttf");
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");
+  src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Regular) format("truetype");
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("otf");
-  src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Bold) format("ttf");
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
+  src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Bold) format("truetype");
   font-weight: 700;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("otf");
-  src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Demi) format("ttf");
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype");
+  src: url(../../assets/fonts/Alternative\ files/AvenirNextLTPro-Demi) format("truetype");
   font-weight: 600;
+}
+* ::before ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #323232;
+  display: flex;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.nav__logo {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 50%;
+}
+.nav__list {
+  list-style-type: none;
+  color: #ffffff;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem;
+  align-items: center;
+  height: 50%;
+}
+.nav__biography {
+  font-family: "Avenir Next";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50vw;
+}
+.nav__biography:hover {
+  border-bottom: #ffffff 5px solid;
+  color: #ffffff;
+  cursor: pointer;
+}
+.nav__biography:active {
+  border-bottom: #ffffff 5px solid;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 700;
+}
+.nav__biography:disabled {
+  border: none;
+  color: #e1e1e1;
+}
+.nav__shows {
+  font-family: "Avenir Next";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50vh;
+}
+.nav__shows:hover {
+  border-bottom: #ffffff 5px solid;
+  color: #ffffff;
+  cursor: pointer;
+}
+.nav__shows:active {
+  border-bottom: #ffffff 5px solid;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 700;
+}
+.nav__shows:disabled {
+  border: none;
+  color: #e1e1e1;
+}
+
+.hero {
+  background: linear-gradient(rgba(50, 50, 50, 0.5019607843), rgba(50, 50, 50, 0.5019607843)), url(../assets/images/hero-bio.jpg);
+  background-repeat: round;
+  display: flex;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hero__copy-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+}
+.hero__copy {
+  font-family: "Avenir Next";
+  color: #ffffff;
+}
+
+.about {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.about__header, .about__subheader, .about__quote-attribute, .about__quote {
+  font-family: "Avenir Next";
+  color: #323232;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #323232;
+  text-align: left;
+}
+.about__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about__quote {
+  font-family: "Avenir Next";
+  color: #323232;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.about__quote-attribute {
+  font-family: "Avenir Next";
+  color: #323232;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.about__subheader {
+  font-family: "Avenir Next";
+  color: #323232;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #000000;
+  margin-top: 0;
+  font-weight: 500;
+}
+.about__copy-container {
+  flex-direction: row;
+}
+.about__copy {
+  font-family: "Avenir Next";
+  color: #323232;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.gallery {
+  background-color: #fafafa;
+}
+.gallery__header-container, .gallery__header {
+  font-family: "Avenir Next";
+  color: #323232;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.gallery__header {
+  padding-top: 1.5rem;
+}
+.gallery__container {
+  flex-direction: column;
+  display: flex;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.gallery__image {
+  max-width: 767px;
+  display: flex;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.footer, .footer__copyright, .footer__agency-copy, .footer__header-copy {
+  background-color: #323232;
+  color: #e1e1e1;
+  display: flex;
+  flex-direction: column;
+}
+.footer__contact-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+.footer__header-container {
+  font-family: "Avenir Next";
+  color: #323232;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  margin-top: 1.5rem;
+}
+.footer__social-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  max-width: 50%;
+}
+.footer__agency-container {
+  margin-left: 1rem;
+}
+.footer__agency {
+  margin-bottom: 1rem;
+}
+.footer__agency-header {
+  font-family: "Avenir Next";
+  color: #e1e1e1;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  word-spacing: 10%;
+}
+.footer__agency-copy {
+  font-family: "Avenir Next";
+  color: #e1e1e1;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+.footer__logo-container {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.footer__copyright-container {
+  margin-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+.footer__copyright {
+  font-family: "Avenir Next";
+  color: #e1e1e1;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
 }/*# sourceMappingURL=bio.css.map */

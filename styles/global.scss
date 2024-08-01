@@ -2,25 +2,39 @@
 @use "./partials/global" as *;
 @use "./partials/mixins" as *;
 @use "./partials/variables" as *;
+@use "./partials/breakpoints" as *;
 
-::before
-::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* ::before ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    margin-left: 1rem;
-    margin-right: 1rem;
+  font-size: 16px;
 
-    @include tablet {
-        margin-left: 2.25rem;
-        margin-right: 2.25rem;
-    }
+  @include tablet {
+    margin-left: 2.25rem;
+    margin-right: 2.25rem;
+  }
 
-    @include desktop {
-        margin-left: auto;
-        margin-right: auto;
+  @include desktop {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.header {
+  background-color: $bandsite-black;
+  display: flex;
+}
+
+.nav {
+    @extend .header;
+    flex-direction: column;
+    
+    &__logo {
+        justify-content: center;
+        align-items: center;
     }
 }

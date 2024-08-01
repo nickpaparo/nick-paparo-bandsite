@@ -1,7 +1,288 @@
-@use './partials/fonts' as *;
-@use './partials/global' as *;
-@use './partials/mixins' as *;
-@use './partials/variables' as *;
-@use './partials/breakpoints' as *;
+@use "./partials/fonts" as *;
+@use "./partials/global" as *;
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+@use "./partials/breakpoints" as *;
 
+* ::before ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: $bandsite-black;
+  display: flex;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__logo {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 50%;
+  }
+
+  &__list {
+    list-style-type: none;
+    color: $white;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem;
+    align-items: center;
+    height: 50%;
+  }
+
+  &__biography {
+    font-family: $base-font;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 50vw;
+
+    &:hover {
+      border-bottom: $white 5px solid;
+      color: $white;
+      cursor: pointer;
+    }
+
+    &:active {
+      border-bottom: $white 5px solid;
+      color: $white;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    &:disabled {
+      border: none;
+      color: $mercury;
+    }
+  }
+
+  &__shows {
+    font-family: $base-font;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 50vh;
+
+    &:hover {
+      border-bottom: $white 5px solid;
+      color: $white;
+      cursor: pointer;
+    }
+
+    &:active {
+      border-bottom: $white 5px solid;
+      color: $white;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    &:disabled {
+      border: none;
+      color: $mercury;
+    }
+  }
+
+  //   &__biography:hover {
+  //     border-bottom: $white 5px solid;
+  //     color: $white;
+  //     cursor: pointer;
+  //   }
+
+  //   ul:active {
+  //     border-bottom: $white 5px solid;
+  //     color: $white;
+  //     cursor: pointer;
+  //     font-weight: 700;
+  //   }
+
+  //   ul:disabled {
+  //     border: none;
+  //     color: $mercury;
+  //   }
+}
+
+.hero {
+  background: linear-gradient(#32323280, #32323280),
+    url(../assets/images/hero-bio.jpg);
+  background-repeat: round;
+  display: flex;
+  height: 100vh;
+  object-fit: cover;
+
+  &__copy-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+  }
+
+  &__copy {
+    font-family: $base-font;
+    color: $white;
+  }
+}
+
+.about {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+  margin-left: 1rem;
+
+  &__header {
+    @include h2;
+    color: $bandsite-black;
+    text-align: left;
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__quote {
+    @extend .about__header;
+    @include h3;
+  }
+
+  &__quote-attribute {
+    @extend .about__header;
+    @include h3;
+  }
+
+  &__subheader {
+    @extend .about__header;
+    @include h3;
+    color: $bandsite-darkblack;
+    margin-top: 0;
+    font-weight: 500;
+  }
+
+  &__copy-container {
+    flex-direction: row;
+  }
+
+  &__copy {
+    @include body_copy;
+    margin-bottom: 1rem;
+  }
+}
+
+.gallery {
+  background-color: $alabaster;
+
+  &__header-container {
+    @include h2;
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  &__header {
+    @extend .gallery__header-container;
+    padding-top: 1.5rem;
+  }
+
+  &__container {
+    flex-direction: column;
+    display: flex;
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  &__image {
+    max-width: $max-phone;
+    display: flex;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+}
+
+.footer {
+  background-color: $bandsite-black;
+  color: $mercury;
+  display: flex;
+  flex-direction: column;
+
+  &__contact-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+  }
+
+  &__header-container {
+    @include h2;
+    display: flex;
+    margin-top: 1.5rem;
+  }
+
+  &__header-copy {
+    @extend .footer;
+  }
+
+  &__social-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    max-width: 50%;
+  }
+
+  &__social {
+  }
+
+  &__agency-container {
+    margin-left: 1rem;
+  }
+
+  &__agency {
+    margin-bottom: 1rem;
+  }
+
+  &__agency-header {
+    @include footer_copy;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    word-spacing: 10%;
+  }
+
+  &__agency-copy {
+    @extend .footer;
+    @include footer_copy;
+    text-decoration: none;
+    margin-bottom: 1rem;
+  }
+
+  &__logo-container {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__logo {
+  }
+
+  &__copyright-container {
+    margin-left: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__copyright {
+    @extend .footer;
+    @include footer_copy;
+  }
+}
