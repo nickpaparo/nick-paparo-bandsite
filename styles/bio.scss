@@ -25,11 +25,36 @@
   flex-direction: column;
   width: 100%;
 
-  &__logo {
+  @include tablet {
+    min-width: $max-phone;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__logo-container {
     justify-content: center;
     display: flex;
     align-items: center;
     height: 50%;
+    margin-top: 1rem;
+
+    @include tablet {
+      display: flex;
+      margin-left: 2.25rem;
+      align-items: center;
+      margin-top: 0;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    min-height: fit-content;
+    align-items: center;
+    justify-content: center;
   }
 
   &__list {
@@ -38,80 +63,61 @@
     flex-direction: row;
     display: flex;
     justify-content: space-evenly;
-    margin: 1rem;
     align-items: center;
     height: 50%;
+
+    @include tablet {
+      margin-left: 3rem;
+      gap: 2rem;
+    }
   }
 
-  &__biography {
-    font-family: $base-font;
+  &__list-cta {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: center;
+    padding-bottom: 0.45rem;
+    margin-top: 0.40rem;
+
+    &:hover {
+      border-bottom: $white 5px solid;
+      color: $white;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    &:active {
+      border-bottom: $white 5px solid;
+      color: $white;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    &:disabled {
+      border: none;
+      color: $mercury;
+      font-weight: 500;
+    }
+  }
+
+  &__bio-cta {
+    @include body_copy;
+    color: $white;
     display: flex;
     align-items: center;
     justify-content: center;
     max-width: 50vw;
-
-    &:hover {
-      border-bottom: $white 5px solid;
-      color: $white;
-      cursor: pointer;
-    }
-
-    &:active {
-      border-bottom: $white 5px solid;
-      color: $white;
-      cursor: pointer;
-      font-weight: 700;
-    }
-
-    &:disabled {
-      border: none;
-      color: $mercury;
-    }
   }
 
-  &__shows {
-    font-family: $base-font;
+  &__shows-cta {
+    @include body_copy;
+    color: $white;
     display: flex;
     align-items: center;
     justify-content: center;
     max-width: 50vh;
-
-    &:hover {
-      border-bottom: $white 5px solid;
-      color: $white;
-      cursor: pointer;
-    }
-
-    &:active {
-      border-bottom: $white 5px solid;
-      color: $white;
-      cursor: pointer;
-      font-weight: 700;
-    }
-
-    &:disabled {
-      border: none;
-      color: $mercury;
-    }
   }
-
-  //   &__biography:hover {
-  //     border-bottom: $white 5px solid;
-  //     color: $white;
-  //     cursor: pointer;
-  //   }
-
-  //   ul:active {
-  //     border-bottom: $white 5px solid;
-  //     color: $white;
-  //     cursor: pointer;
-  //     font-weight: 700;
-  //   }
-
-  //   ul:disabled {
-  //     border: none;
-  //     color: $mercury;
-  //   }
 }
 
 .hero {
@@ -119,8 +125,7 @@
     url(../assets/images/hero-bio.jpg);
   background-repeat: round;
   display: flex;
-  height: 100vh;
-  object-fit: cover;
+  height: 45vw;
 
   &__copy-container {
     display: flex;
@@ -130,8 +135,9 @@
   }
 
   &__copy {
-    font-family: $base-font;
+    @include h1;
     color: $white;
+    font-weight: 500;
   }
 }
 
@@ -174,6 +180,14 @@
 
   &__copy-container {
     flex-direction: row;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      max-width: 30%;
+      justify-content: space-evenly;
+      align-self: center
+    }
   }
 
   &__copy {
@@ -189,11 +203,14 @@
     @include h2;
     margin-right: 1rem;
     margin-left: 1rem;
+    font-weight: 500;
   }
 
   &__header {
     @extend .gallery__header-container;
     padding-top: 1.5rem;
+    margin-top: 0;
+    margin-left: 0;
   }
 
   &__container {
@@ -201,14 +218,19 @@
     display: flex;
     margin-right: 1rem;
     margin-left: 1rem;
+
+    @include tablet {
+      display: table;
+      width: 30%;
+      height: auto;
+      flex-direction: row;
+    }
   }
 
   &__image {
     max-width: $max-phone;
     display: flex;
     margin-bottom: 1rem;
-    margin-right: 1rem;
-    margin-left: 1rem;
   }
 }
 
@@ -232,6 +254,7 @@
 
   &__header-copy {
     @extend .footer;
+    font-weight: 500;
   }
 
   &__social-container {
@@ -239,10 +262,11 @@
     justify-content: space-between;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    max-width: 50%;
+    max-width: 45%;
   }
 
   &__social {
+    min-width: auto;
   }
 
   &__agency-container {
@@ -255,9 +279,10 @@
 
   &__agency-header {
     @include footer_copy;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 1rem;
     word-spacing: 10%;
+    letter-spacing: 10%;
   }
 
   &__agency-copy {
