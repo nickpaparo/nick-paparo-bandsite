@@ -75,6 +75,14 @@
   font-weight: 400;
 }
 
+@mixin footer_copy_tablet {
+  font-family: $base-font;
+  color: $mercury;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+
 @mixin button {
   font-family: $base-font;
   color: $bandsite-black;
