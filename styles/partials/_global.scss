@@ -1,0 +1,277 @@
+@use "./breakpoints" as *;
+@use "./mixins" as *;
+@use "./variables" as *;
+@use "./fonts" as *;
+
+* ::before ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: $bandsite-black;
+  display: flex;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include tablet {
+    min-width: $max-phone;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  @include desktop {
+    display: flex;
+    margin-left: 9rem;
+  }
+
+  &__logo-container {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 50%;
+    margin-top: 1rem;
+
+    @include tablet {
+      display: flex;
+      margin-left: 2.25rem;
+      align-items: center;
+      margin-top: 0;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    @include desktop {
+      margin-left: 0;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    min-height: fit-content;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__list {
+    list-style-type: none;
+    color: $white;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50%;
+
+    @include tablet {
+      margin-left: 3rem;
+      gap: 2rem;
+    }
+  }
+
+  &__list-cta {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: center;
+    padding-bottom: 0.45rem;
+    margin-top: 0.4rem;
+
+    &:hover {
+      border-bottom: $white 5px solid;
+      color: $white;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    &:active {
+      border-bottom: $white 5px solid;
+      color: $white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    &:disabled {
+      border: none;
+      color: $mercury;
+      font-weight: 500;
+    }
+
+    @include tablet {
+      padding-bottom: 1rem;
+      padding-top: 1.25rem;
+    }
+  }
+
+  &__bio-cta {
+    @include body_copy;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 50vw;
+  }
+
+  &__shows-cta {
+    @include body_copy;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 50vh;
+  }
+}
+
+.footer {
+  background-color: $bandsite-black;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+
+  &__contact-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      margin-left: 2.25rem;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    @include desktop {
+      margin-top: 1.5rem;
+      margin-left: 9rem;
+      margin-right: 9rem;
+    }
+  }
+
+  &__header-container {
+    @include h2;
+    display: flex;
+    margin-top: 1.5rem;
+  }
+
+  &__header-copy {
+    @extend .footer;
+    font-weight: 500;
+  }
+
+  &__social-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    max-width: 45%;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      width: 20vw;
+    }
+  }
+
+  &__social {
+    min-width: auto;
+
+    @include tablet {
+      max-height: 75%;
+    }
+  }
+
+  &__agency-container {
+    margin-left: 1rem;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-left: 2.25rem;
+      margin-right: 2.25rem;
+    }
+
+    @include desktop {
+      margin-left: 9rem;
+      margin-right: 9rem;
+      justify-content: flex-start;
+      gap: 8rem;
+    }
+  }
+
+  &__agency {
+    margin-bottom: 1rem;
+
+    @include tablet {
+      max-width: 30%;
+    }
+  }
+
+  &__agency-header {
+    @include footer_copy;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    word-spacing: 10%;
+    letter-spacing: 10%;
+  }
+
+  &__agency-copy {
+    @extend .footer;
+    @include footer_copy;
+    text-decoration: none;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      @include footer_copy_tablet;
+    }
+
+    @include desktop {
+      @include footer_copy_tablet;
+    }
+  }
+
+  &__logo-container {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      margin-left: 2.25rem;
+    }
+
+    @include desktop {
+      margin-left: 9rem;
+    }
+  }
+
+  &__logo {
+    display: flex;
+  }
+
+  &__copyright-container {
+    margin-left: 1rem;
+    margin-bottom: 1.5rem;
+
+    @include tablet {
+      margin-left: 2.25rem;
+      margin-right: 2.25rem;
+    }
+
+    @include desktop {
+      margin: 1.5rem 9rem 1.5rem 9rem;
+    }
+  }
+
+  &__copyright {
+    @extend .footer;
+    @include footer_copy;
+  }
+}
