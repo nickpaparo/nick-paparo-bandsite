@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/global.css" />
     <link rel="stylesheet" href="./styles/bio.css" />
     <title>The Bees Knees Bio</title>
   </head>
@@ -15,15 +14,16 @@
           <img
             class="nav__logo"
             src="./assets/logos/Logo-bandsite.svg"
+            href="./index.html"
             alt="Bandsite logo"
           />
         </div>
         <ul class="nav__list">
-          <div class="nav__list-cta">
-            <li class="nav__bio-cta" href=""><a>Biography</a></li>
+          <div class="nav__list-cta nav__list-cta--active">
+            <li class="nav__bio-cta" href="./index.html"><a>Biography</a></li>
           </div>
           <div class="nav__list-cta">
-            <li class="nav__shows-cta" href=""><a>Shows</a></li>
+            <li class="nav__shows-cta" href="./pages/shows.html"><a>Shows</a></li>
           </div>
         </ul>
       </nav>
@@ -120,6 +120,25 @@
           />
         </div>
       </section>
+    <section class="comments">
+      <div class="comments__header-container">
+        <h2 class="comments__header">Join the Conversation</h2>
+      </div>
+      <div class="comments__form-container">
+        <div class="comments__avatar-container">
+          <img class="comments__avatar-img" src="./assets/images/Mohan-muruge.jpg" alt="individual profile picture">
+        </div>
+        <form class="comments__form">
+          <label class="comments__form-label" for="name">Name</label>
+            <input class="comments__form-copy" type="text" id="name" name="name" placeholder="Enter your name">
+          <label class="comments__form-label" for="comment">Comment</label>
+          <textarea class="comments__form-copy" id="comment" name="comment" placeholder="Add a new comment" autocorrect="on" rows="6"></textarea>
+          <button class="comments__button">COMMENT</button>
+        </form>
+      </div>
+      <script></script>
+        
+    </section>
     </main>
     <footer class="footer">
       <div class="footer__contact-container">
@@ -130,13 +149,13 @@
           <img
             class="footer__social"
             src="./assets/icons/SVG/Icon-instagram.svg"
-            href=""
+            url="https://www.instagram.com/"
             alt="Instagram icon"
           />
           <img
             class="footer__social"
             src="./assets/icons/SVG/Icon-facebook.svg"
-            href=""
+            url=""
             alt="Facebook icon"
           />
           <img

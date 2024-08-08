@@ -80,7 +80,7 @@
     @include h2;
     color: $bandsite-black;
     text-align: left;
-    margin-top: 2.25rem;
+    margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 
     @include tablet {
@@ -199,6 +199,10 @@
 .gallery {
   background-color: $alabaster;
 
+  @include tablet {
+    padding-bottom: 1rem;
+  }
+
   &__header-container {
     @include h2;
     margin-right: 1rem;
@@ -243,13 +247,16 @@
       display: flex;
       flex-flow: wrap;
       justify-content: space-between;
+      gap: 1.5rem;
       margin-right: 2.25rem;
       margin-left: 2.25rem;
+      margin-bottom: 1.5rem;
     }
 
     @include desktop {
       margin-left: 9rem;
       margin-right: 9rem;
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -259,13 +266,167 @@
     margin-bottom: 1rem;
 
     @include tablet {
-      max-width: calc(33% - 2.25rem);
-      margin-bottom: 1.5rem;
+      max-width: calc(31% - 2.25rem);
+      width: 32%;
+      margin: 0;
     }
 
     @include desktop {
       max-width: calc(41% - 9rem);
-      margin-bottom: 1.5rem;
+      width: 34%;
+      margin: 0;
+    }
+  }
+}
+
+.comments {
+
+  @include tablet {
+    margin-left: 2.25rem;
+    margin-right: 2.25rem;
+  }
+
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__header-container {
+    margin-left: $mobile-gutter;
+
+    @include tablet {
+      margin-left: 0;
+    }
+
+    @include desktop {
+      justify-content: flex-start;
+    }
+  }
+
+  &__header {
+    @include h2;
+
+    @include tablet {
+      @include h2-tablet
+    }
+  }
+
+  &__form-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: $mobile-gutter;
+    margin-right: $mobile-gutter;
+    gap: 0;
+    justify-content: space-between;
+
+    @include tablet {
+      margin-left: 3rem;
+      margin-right: 3rem;
+    }
+
+    @include desktop {
+      width: 33%;
+      justify-content: center;
+      display: flex;
+    }
+  }
+
+  &__avatar-container {
+    border-radius: 50%;
+    margin: 0.8rem 0 0 0;
+    display: flex;
+    overflow: hidden;
+    max-height: 10vw;
+    max-width: 10vw;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      height: 7vw;
+      width: 7vw;
+      display: flex;
+      justify-content: center;
+    }
+
+    @include desktop {
+      height: 4vw;
+      width: 4vw;
+    }
+  }
+
+  &__avatar-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      width: 89%;
+    }
+  }
+
+  &__form-label {
+    @include comments_label;
+  }
+
+  &__form-copy {
+    border-radius: 4px;
+    border: 0.06rem solid $mercury;
+    background-color: $alabaster;
+    padding: 0.75rem;
+
+    @include tablet {
+      padding: 1rem;
+
+    }
+
+    &:focus-within {
+      border: none;
+      outline: 0.06rem solid $bandsite-black;
+    }
+
+    &:invalid {
+      border: none;
+      outline: 0.06rem solid red;
+      border-radius: 0.25rem;
+    }
+  }
+
+  &__form-copy::placeholder {
+    font-family: $base-font;
+    color: $bandsite-black;
+    font-size: 0.675rem;
+    padding-top: 0.4rem;
+    padding-left: 0.4rem
+  }
+
+  &__button {
+    @include button;
+    color: $white;
+    margin-top: 1rem;
+    background-color: $bandsite-black;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.25rem;
+    height: 2.5rem;
+    font-size: 0.875rem;
+
+    @include tablet {
+      width: 30%;
+      align-self: flex-end;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $bandsite-darkblack;
     }
   }
 }

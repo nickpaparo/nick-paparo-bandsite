@@ -1,0 +1,84 @@
+@use "./partials/fonts" as *;
+@use "./partials/global" as *;
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+@use "./partials/breakpoints" as *;
+
+* ::before ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  display: flex;
+  background: linear-gradient(#32323270, #32323270),
+    url(../assets/images/hero-shows.jpg);
+  background-repeat: round;
+  height: 90vw;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+
+  &__copy-container {
+    display: flex;
+    margin-left: $mobile-gutter;
+  }
+
+  &__copy-album {
+    @include h2_hero;
+    margin-top: 1.5rem;
+
+    @include tablet {
+        @include h2_hero;
+        
+    }
+  }
+
+  &__copy {
+    @include h1_hero;
+    word-spacing: 0.1rem;
+    max-width: 70%;
+
+    @include tablet {
+      @include h1-hero-tablet;
+    }
+  }
+
+  &__embed-container {
+    margin-left: $mobile-gutter;
+    margin-right: $mobile-gutter;
+    margin-bottom: 1.5rem;
+  }
+
+  &__embed {
+  }
+}
+
+.shows {
+    background-color: $white;
+
+    &__header-container {
+        display: flex;
+        margin-left: $mobile-gutter;
+        
+    }
+
+    &__header {
+        @include h2;
+
+        @include tablet {
+            @include h2-tablet
+        }
+    }
+
+    &__container {
+        margin-left: $mobile-gutter;
+        margin-right: $mobile-gutter;
+    }
+}
