@@ -103,7 +103,19 @@
     @include tablet {
       padding-bottom: 1.5rem;
       padding-top: 1.25rem;
-      border-bottom: $white 2px solid;
+
+      &:hover {
+        border-bottom: $white 2px solid;
+        color: $white;
+        cursor: pointer;
+        font-weight: 500;
+      }
+  
+      &--active {
+        font-weight: 700;
+        color: $white;
+        border-bottom: $white 2px solid;
+      }
     }
   }
 

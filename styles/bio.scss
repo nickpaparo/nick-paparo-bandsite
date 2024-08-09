@@ -287,11 +287,11 @@
 
   @include desktop {
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
     margin-left: 9rem;
     margin-right: 9rem;
+    justify-content: center;
   }
 
   &__header-container {
@@ -317,6 +317,24 @@
     }
   }
 
+  &__parent-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include tablet {
+      display: flex;
+      justify-content: center;
+
+    }
+
+    @include desktop {
+      display: flex;
+      width: 40%;
+      justify-content: center;
+    }
+  }
+
   &__form-container {
     display: flex;
     flex-direction: row;
@@ -332,11 +350,12 @@
     }
 
     @include desktop {
-      width: 33%;
       justify-content: center;
       display: flex;
       gap: 1rem;
       align-self: center;
+      margin: 0;
+      width: 100%;
     }
   }
 
@@ -372,7 +391,6 @@
   &__form {
     display: flex;
     flex-direction: column;
-    width: 85%;
     margin-bottom: 1rem;
 
     @include tablet {
@@ -434,6 +452,90 @@
     &:hover {
       cursor: pointer;
       background-color: $bandsite-darkblack;
+    }
+  }
+
+  &__new {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.06rem $mercury solid;
+    margin: 1rem 0 1rem 0;
+
+    @include tablet {
+
+    }
+
+    @include desktop {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
+
+  &__new-avatar {
+    border-radius: 50%;
+    margin: 1rem 0 0 0;
+    display: flex;
+    overflow: hidden;
+    max-height: 2.25rem;
+    max-width: 2.25rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__new-avatarimg {
+    background-color: $bandsite-darkblack;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__new-comment {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+
+    }
+
+    @include desktop {
+
+    }
+  }
+
+  &__new-heading {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+
+  }
+
+  &__new-name {
+    @include body_copy;
+
+    @include tablet {
+      @include body_copy_tablet;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__new-time {
+    @include shows_subheader_tablet;
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  &__new-container {
+
+  }
+
+  &__new-copy {
+    padding-bottom: 1rem;
+    @include body_copy;
+
+    @include tablet {
+      @include body_copy_tablet;
     }
   }
 }
