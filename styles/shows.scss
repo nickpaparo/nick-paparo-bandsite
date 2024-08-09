@@ -22,12 +22,31 @@
   background-repeat: round;
   height: 90vw;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   gap: 0.5rem;
+
+  @include tablet {
+    height: 60vw;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  @include desktop {
+    justify-content: center;
+  }
 
   &__copy-container {
     display: flex;
     margin-left: $mobile-gutter;
+
+    @include tablet {
+      margin: 2rem 2.25rem 0 2.25rem;
+    }
+
+    @include desktop {
+      margin: 0 0 0 0;
+      max-width: 50%;
+    }
   }
 
   &__copy-album {
@@ -35,18 +54,59 @@
     margin-top: 1.5rem;
 
     @include tablet {
-        @include h2_hero;
-        
+      @include h2_hero_tablet;
+    }
+
+    @include desktop {
+      @include h2_hero_desktop;
+      margin: 0 0 1.5rem 9rem;
     }
   }
 
-  &__copy {
+  &__header-container {
+    margin-left: $mobile-gutter;
+    margin-right: $mobile-gutter;
+
+    @include tablet {
+      margin-left: 2.25rem;
+      margin-right: 2.25rem;
+    }
+
+    @include desktop {
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__desktop-container {
+    @include tablet {
+      gap: 1.2rem;
+      height: 20%;
+    }
+
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      margin: 0 9rem 0 9rem;
+      justify-content: space-between;
+    }
+  }
+
+  &__header {
     @include h1_hero;
     word-spacing: 0.1rem;
     max-width: 70%;
 
     @include tablet {
       @include h1-hero-tablet;
+      max-width: 80%;
+      margin-bottom: 1.5rem;
+    }
+
+    @include desktop {
+      margin: 0;
+      max-width: 80%;
     }
   }
 
@@ -54,31 +114,146 @@
     margin-left: $mobile-gutter;
     margin-right: $mobile-gutter;
     margin-bottom: 1.5rem;
-  }
 
-  &__embed {
+    @include tablet {
+      width: 55%;
+      margin-left: 2.25rem;
+    }
+
+    @include desktop {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      width: 50%;
+    }
   }
 }
 
 .shows {
-    background-color: $white;
+  background-color: $white;
 
-    &__header-container {
-        display: flex;
-        margin-left: $mobile-gutter;
-        
+  &__header-container {
+    display: flex;
+    margin-left: $mobile-gutter;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      margin-left: 2.25rem;
+      gap: 10%;
+      align-items: flex-start;
     }
 
-    &__header {
-        @include h2;
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      margin: 0 auto;
+    }
+  }
 
-        @include tablet {
-            @include h2-tablet
-        }
+  &__header {
+    @include h2;
+    margin-left: $mobile-gutter;
+    margin-right: $mobile-gutter;
+
+    @include tablet {
+      @include h2-tablet;
+      display: flex;
     }
 
-    &__container {
-        margin-left: $mobile-gutter;
-        margin-right: $mobile-gutter;
+    @include desktop {
+      @include h2-tablet;
+      margin-left: 9rem;
+      margin-right: 9rem;
     }
+  }
+
+  &__subheader-container {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      gap: 5%;
+      margin-top: 1rem;
+    }
+
+    @include desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__subheader {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      @include shows_subheader_tablet;
+      width: 25%;
+    }
+  }
+
+  &__subheader--hidden {
+    width: 25%;
+    list-style-type: none;
+    color: $white;
+  }
+
+  &__container {
+    margin-left: $mobile-gutter;
+    margin-right: $mobile-gutter;
+
+    @include tablet {
+      width: 60%;
+      margin: 1rem 0 1rem 0;
+    }
+
+    @include desktop {
+    }
+  }
+
+  &__card {
+    display: flex;
+    width: 100%;
+    gap: 5%;
+    border-bottom: $mercury 0.06rem solid;
+    padding: 1.5rem 0 1.5rem 0;
+  }
+
+  &__card:hover {
+    background-color: $alabaster;
+    cursor: pointer;
+  }
+
+  &__card:active {
+    background-color: $mercury;
+  }
+
+  &__details {
+    list-style-type: none;
+    display: flex;
+    width: 25%;
+    @include body_copy_tablet;
+  }
+
+  &__details--cta {
+    width: 25%;
+    @include button;
+    font-weight: 500;
+    font-size: 0.815rem;
+  }
+
+  &__details--bold {
+    @extend .shows__details;
+    font-weight: 600;
+  }
 }
+
+// .shows__subheader .shows__details .shows__details--cta {
+//     width: 25%;
+// }
+
+// .shows__card .shows__details .shows__details--cta {
+//     width: 25%;
+// }

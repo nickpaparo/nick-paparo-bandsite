@@ -82,6 +82,16 @@
   margin-bottom: 1rem;
 }
 
+@mixin h2_hero_desktop {
+  font-family: $base-font;
+  color: $white;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 @mixin h2-tablet {
   font-family: $base-font;
   color: $bandsite-black;
@@ -128,7 +138,6 @@
   color: $silver;
   font-size: 0.625rem;
   line-height: 1.25rem;
-  font-weight: 500;
   border-bottom: 0.25rem;
 }
 
@@ -139,6 +148,14 @@
   line-height: 1.25rem;
   font-weight: 500;
   border-bottom: 0.5rem;
+}
+
+@mixin shows_subheader_tablet {
+  font-family: $base-font;
+  color: $silver;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 600;
 }
 
 @mixin button {
@@ -168,8 +185,10 @@
 
 @mixin button {
   font-family: $base-font;
-  color: $bandsite-black;
+  color: $white;
+  background-color: $bandsite-black;
   font-size: 0.625rem;
   line-height: 1.25rem;
-  font-weight: 700;
+  border: none;
+  border-radius: 4%;
 }
