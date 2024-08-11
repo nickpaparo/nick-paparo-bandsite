@@ -725,6 +725,9 @@
   }
 }
 
+.comments {
+  margin: 0 1rem 0 1rem;
+}
 @media (min-width: 767px) {
   .comments {
     margin-left: 2.25rem;
@@ -740,9 +743,6 @@
     margin-right: 9rem;
     justify-content: center;
   }
-}
-.comments__header-container {
-  margin-left: 1rem;
 }
 @media (min-width: 767px) {
   .comments__header-container {
@@ -796,8 +796,6 @@
 .comments__form-container {
   display: flex;
   flex-direction: row;
-  margin-left: 1rem;
-  margin-right: 1rem;
   gap: 0;
   justify-content: space-between;
   border-bottom: 0.06rem solid #e1e1e1;
@@ -851,7 +849,8 @@
 .comments__form {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 1rem;
+  width: 100%;
 }
 @media (min-width: 767px) {
   .comments__form {
@@ -871,6 +870,7 @@
   border: 0.06rem solid #e1e1e1;
   background-color: #fafafa;
   padding: 0.75rem;
+  margin: 0.5rem 0 0.75rem 0;
 }
 @media (min-width: 767px) {
   .comments__form-copy {
@@ -922,11 +922,29 @@
   cursor: pointer;
   background-color: #000000;
 }
+.comments__new-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+@media (min-width: 767px) {
+  .comments__new-container {
+    margin: 0 3rem 0 3rem;
+  }
+}
+@media (min-width: 1279px) {
+  .comments__new-container {
+    margin: 0 auto;
+    padding-bottom: 2rem;
+  }
+}
 .comments__new {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   border-bottom: 0.06rem #e1e1e1 solid;
-  margin: 1rem 0 1rem 0;
+  margin-top: 1rem;
+  gap: 1rem;
 }
 @media (min-width: 1279px) {
   .comments__new {
@@ -941,20 +959,25 @@
   display: flex;
   overflow: hidden;
   max-height: 2.25rem;
+  min-height: 2.25rem;
   max-width: 2.25rem;
+  min-width: 2.25rem;
   justify-content: center;
   align-items: center;
+  background-color: #e1e1e1;
 }
 .comments__new-avatarimg {
-  background-color: #000000;
-  height: 100%;
-  width: 100%;
+  background-color: #e1e1e1;
+  min-height: 100%;
+  min-width: 100%;
+  background-image: url(../assets/images/Mohan-muruge.jpg);
   -o-object-fit: cover;
      object-fit: cover;
 }
 .comments__new-comment {
   display: flex;
   flex-direction: column;
+  min-width: 88.75%;
 }
 .comments__new-heading {
   display: flex;
@@ -967,6 +990,7 @@
   font-size: 0.8125rem;
   line-height: 1.25rem;
   font-weight: 400;
+  font-weight: 600;
 }
 @media (min-width: 767px) {
   .comments__new-name {

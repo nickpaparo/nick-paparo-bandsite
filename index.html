@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./scripts/index-page.js" defer></script>
     <link rel="stylesheet" href="./styles/bio.css" />
-    <script></script>
     <title>The Bees Knees Bio</title>
   </head>
 
@@ -128,50 +128,54 @@
           <h2 class="comments__header">Join the Conversation</h2>
         </div>
         <div class="comments__parent-container">
-        <div class="comments__form-container">
-          <div class="comments__avatar-container">
-            <img
-              class="comments__avatar-img"
-              src="./assets/images/Mohan-muruge.jpg"
-              alt="individual profile picture"
-            />
-          </div>
-          <form class="comments__form" id="comments-form">
-            <label class="comments__form-label" for="name">Name</label>
-            <input
-              class="comments__form-copy"
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Enter your name"
-            />
-            <label class="comments__form-label" for="comment">Comment</label>
-            <textarea
-              class="comments__form-copy"
-              id="comment"
-              name="comment"
-              placeholder="Add a new comment"
-              autocorrect="on"
-              rows="6"
-            ></textarea>
-            <button class="comments__button">COMMENT</button>
-          </form>
-        </div>
-        <div class="comments__new">
-          <div class="comments__new-avatar">
-            <div class="comments__new-avatarimg">
+          <div class="comments__form-container">
+            <div class="comments__avatar-container">
+              <img
+                class="comments__avatar-img"
+                src="./assets/images/Mohan-muruge.jpg"
+                alt="individual profile picture"
+              />
             </div>
+            <form class="comments__form" id="comments-form">
+              <label class="comments__form-label" for="name">Name</label>
+              <input
+                class="comments__form-copy"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+              />
+              <label class="comments__form-label" for="comment">Comment</label>
+              <textarea
+                class="comments__form-copy"
+                id="comment"
+                name="comment"
+                placeholder="Add a new comment"
+                autocorrect="on"
+                rows="6"
+              ></textarea>
+              <button class="comments__button">COMMENT</button>
+            </form>
           </div>
-          <div class="comments__new-comment">
-            <div class="comments__new-heading">
-              <p class="comments__new-name">Victor Pinto</p>
-              <p class="comments__new-time">11/02/2023</p>
-            </div>
-            <div class="comments__new-container">
-              <p class="comments__new-copy">This music is amazing. Every time I hear one of their songs it gives me bumps. Shivers straight down my spine.</p>
-            </div>
+          <div class="comments__new-container">
+            <!-- <div class="comments__new">
+              <div class="comments__new-avatar">
+                <div class="comments__new-avatarimg"></div>
+              </div>
+              <div class="comments__new-comment">
+                <div class="comments__new-heading">
+                  <p class="comments__new-name">Victor Pinto</p>
+                  <p class="comments__new-time">11/02/2023</p>
+                </div>
+                <div class="comments__new-container">
+                  <p class="comments__new-copy">
+                    This music is amazing. Every time I hear one of their songs
+                    it gives me bumps. Shivers straight down my spine.
+                  </p>
+                </div>
+              </div>
+            </div> -->
           </div>
-        </div>
         </div>
       </section>
     </main>

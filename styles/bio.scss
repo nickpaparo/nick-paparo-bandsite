@@ -280,6 +280,8 @@
 }
 
 .comments {
+  margin: 0 $mobile-gutter 0 $mobile-gutter;
+
   @include tablet {
     margin-left: 2.25rem;
     margin-right: 2.25rem;
@@ -295,7 +297,7 @@
   }
 
   &__header-container {
-    margin-left: $mobile-gutter;
+    
 
     @include tablet {
       margin-left: 0;
@@ -338,8 +340,6 @@
   &__form-container {
     display: flex;
     flex-direction: row;
-    margin-left: $mobile-gutter;
-    margin-right: $mobile-gutter;
     gap: 0;
     justify-content: space-between;
     border-bottom: 0.06rem solid $mercury;
@@ -391,7 +391,8 @@
   &__form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem 1rem;
+    width: 100%;
 
     @include tablet {
       width: 89%;
@@ -408,6 +409,7 @@
     border: 0.06rem solid $mercury;
     background-color: $alabaster;
     padding: 0.75rem;
+    margin: 0.5rem 0 0.75rem 0;
 
     @include tablet {
       padding: 1rem;
@@ -455,11 +457,28 @@
     }
   }
 
+  &__new-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+
+    @include tablet {
+      margin: 0 3rem 0 3rem;
+    }
+
+    @include desktop {
+      margin: 0 auto;
+      padding-bottom: 2rem;
+    }
+  }
+
   &__new {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     border-bottom: 0.06rem $mercury solid;
-    margin: 1rem 0 1rem 0;
+    margin-top: 1rem;
+    gap: 1rem;
 
     @include tablet {
 
@@ -478,21 +497,26 @@
     display: flex;
     overflow: hidden;
     max-height: 2.25rem;
+    min-height: 2.25rem;
     max-width: 2.25rem;
+    min-width: 2.25rem;
     justify-content: center;
     align-items: center;
+    background-color: $mercury;
   }
 
   &__new-avatarimg {
-    background-color: $bandsite-darkblack;
-    height: 100%;
-    width: 100%;
+    background-color: $mercury;
+    min-height: 100%;
+    min-width: 100%;
+    background-image: url(../assets/images/Mohan-muruge.jpg);
     object-fit: cover;
   }
 
   &__new-comment {
     display: flex;
     flex-direction: column;
+    min-width: 88.75%;
 
     @include tablet {
 
@@ -512,6 +536,7 @@
 
   &__new-name {
     @include body_copy;
+    font-weight: 600;
 
     @include tablet {
       @include body_copy_tablet;
@@ -524,10 +549,6 @@
     @include shows_subheader_tablet;
     font-size: 0.9rem;
     font-weight: 400;
-  }
-
-  &__new-container {
-
   }
 
   &__new-copy {
