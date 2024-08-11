@@ -34,27 +34,23 @@ const showsArray = [
 
 console.log(showsArray);
 
-function displayKeys() {
-  const keyContainer = document.querySelector(".shows__subheader");
-  showsArray.forEach((show) => {
-    const showsHeader = document.createElement("div");
-    showsHeader.classList.add("shows__subheader");
-    Object.keys(showsArray).forEach((key) => {
-      const keyCopy = document.createElement("p");
-      keyCopy.textContext = key;
-      showsHeader.appendChild(keyCopy);
-    });
-    keyContainer.appendChild(showsHeader);
-  });
-}
-
-displayKeys();
-
 const newShowsCardElement = document.querySelector(".shows__card-container");
 
 function createShowsCard(shows) {
   const showsCard = document.createElement("ul");
   showsCard.classList.add("shows__card");
+
+  const showsSubheaderDate = document.createElement("li");
+  showsSubheaderDate.classList.add("shows__subheader--mobile");
+  showsSubheaderDate.innerText = "DATE";
+
+  const showsSubheaderVenue = document.createElement("li");
+  showsSubheaderVenue.classList.add("shows__subheader--mobile");
+  showsSubheaderVenue.innerText = "VENUE";
+
+  const showsSubheaderLocation = document.createElement("li");
+  showsSubheaderLocation.classList.add("shows__subheader--mobile");
+  showsSubheaderLocation.innerText = "LOCATION";
 
   const showsDate = document.createElement("li");
   showsDate.classList.add("shows__details--bold");
@@ -75,8 +71,11 @@ function createShowsCard(shows) {
   showsButton.appendChild(showsButtonCopy);
 
   newShowsCardElement.appendChild(showsCard);
+  showsCard.appendChild(showsSubheaderDate);
   showsCard.appendChild(showsDate);
+  showsCard.appendChild(showsSubheaderVenue);
   showsCard.appendChild(showsVenue);
+  showsCard.appendChild(showsSubheaderLocation);
   showsCard.appendChild(showsLocation);
   showsCard.appendChild(showsButton);
 

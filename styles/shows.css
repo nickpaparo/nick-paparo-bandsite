@@ -216,6 +216,9 @@
     max-height: 75%;
   }
 }
+.footer .footer__social:hover, .footer__copyright .footer__social:hover, .footer__agency-email .footer__social:hover, .footer__agency-copy .footer__social:hover, .footer__header-copy .footer__social:hover {
+  cursor: pointer;
+}
 .footer__agency-container {
   margin-left: 1rem;
 }
@@ -400,11 +403,12 @@
 .hero__parent-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 @media (min-width: 767px) {
   .hero__parent-container {
-    display: flex;
-    margin-top: 1.75rem;
+    justify-content: flex-start;
+    margin-top: 2.25rem;
   }
 }
 @media (min-width: 1279px) {
@@ -477,6 +481,11 @@
     align-items: flex-start;
   }
 }
+.hero__desktop-container {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
 @media (min-width: 767px) {
   .hero__desktop-container {
     gap: 1.2rem;
@@ -520,7 +529,6 @@
 .hero__embed-container {
   margin-left: 1rem;
   margin-right: 1rem;
-  margin-bottom: 1.5rem;
 }
 @media (min-width: 767px) {
   .hero__embed-container {
@@ -609,7 +617,7 @@
 @media (min-width: 767px) {
   .shows__subheader-container {
     display: flex;
-    gap: 5%;
+    gap: 2.5%;
     margin-top: 1rem;
   }
 }
@@ -637,6 +645,24 @@
   list-style-type: none;
   color: #ffffff;
 }
+.shows__subheader--mobile {
+  list-style-type: none;
+  font-family: "Avenir Next";
+  color: #afafaf;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+@media (min-width: 767px) {
+  .shows__subheader--mobile {
+    display: none;
+  }
+}
+@media (min-width: 1279px) {
+  .shows__subheader--mobile {
+    display: none;
+  }
+}
 .shows__container {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -650,7 +676,6 @@
 .shows__card {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   padding: 1rem 0 1rem 0;
   border-bottom: #e1e1e1 0.06rem solid;
 }
@@ -675,12 +700,13 @@
   list-style-type: none;
   display: flex;
   align-items: center;
-  width: 33%;
+  width: 50%;
   font-family: "Avenir Next";
   color: #323232;
   font-size: 0.875rem;
   line-height: 1.5rem;
   font-weight: 400;
+  padding-bottom: 0.5rem;
 }
 @media (min-width: 767px) {
   .shows__details, .shows__details--bold {

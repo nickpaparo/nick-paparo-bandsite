@@ -216,6 +216,9 @@
     max-height: 75%;
   }
 }
+.footer .footer__social:hover, .footer__copyright .footer__social:hover, .footer__agency-email .footer__social:hover, .footer__agency-copy .footer__social:hover, .footer__header-copy .footer__social:hover {
+  cursor: pointer;
+}
 .footer__agency-container {
   margin-left: 1rem;
 }
@@ -945,6 +948,7 @@
   border-bottom: 0.06rem #e1e1e1 solid;
   margin-top: 1rem;
   gap: 1rem;
+  min-width: 88.75%;
 }
 @media (min-width: 1279px) {
   .comments__new {
@@ -978,6 +982,11 @@
   display: flex;
   flex-direction: column;
   min-width: 88.75%;
+}
+@media (min-width: 767px) {
+  .comments__new-comment {
+    min-width: 90%;
+  }
 }
 .comments__new-heading {
   display: flex;

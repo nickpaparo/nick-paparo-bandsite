@@ -150,6 +150,14 @@
   border-bottom: 0.5rem;
 }
 
+@mixin shows_subheader {
+  font-family: $base-font;
+  color: $silver;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+
 @mixin shows_subheader_tablet {
   font-family: $base-font;
   color: $silver;

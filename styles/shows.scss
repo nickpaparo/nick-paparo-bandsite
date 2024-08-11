@@ -35,10 +35,11 @@
   &__parent-container {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 
     @include tablet {
-      display: flex;
-      margin-top: 1.75rem;
+      justify-content: flex-start;
+      margin-top: 2.25rem;
     }
 
     @include desktop {
@@ -93,6 +94,10 @@
   }
 
   &__desktop-container {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+
     @include tablet {
       gap: 1.2rem;
       height: 20%;
@@ -126,7 +131,6 @@
   &__embed-container {
     margin-left: $mobile-gutter;
     margin-right: $mobile-gutter;
-    margin-bottom: 1.5rem;
 
     @include tablet {
       width: 55%;
@@ -195,7 +199,7 @@
 
     @include tablet {
       display: flex;
-      gap: 5%;
+      gap: 2.5%;
       margin-top: 1rem;
     }
 
@@ -220,6 +224,19 @@
     color: $white;
   }
 
+  &__subheader--mobile {
+    list-style-type: none;
+    @include shows_subheader;
+    
+    @include tablet {
+        display: none;
+    }
+
+    @include desktop {
+        display: none;
+    }
+  }
+
   &__container {
     margin-left: $mobile-gutter;
     margin-right: $mobile-gutter;
@@ -236,7 +253,6 @@
   &__card {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     padding: 1rem 0 1rem 0;
     border-bottom: $mercury 0.06rem solid;
 
@@ -263,8 +279,9 @@
     list-style-type: none;
     display: flex;
     align-items: center;
-    width: 33%;
+    width: 50%;
     @include body_copy_tablet;
+    padding-bottom: 0.5rem;
 
     @include tablet {
       list-style-type: none;
