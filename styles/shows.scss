@@ -153,7 +153,7 @@
     margin: 0 3rem 0;
   }
 
-  @include desktop  {
+  @include desktop {
     margin: 0 9rem 9rem 0;
   }
 
@@ -227,13 +227,13 @@
   &__subheader--mobile {
     list-style-type: none;
     @include shows_subheader;
-    
+
     @include tablet {
-        display: none;
+      display: none;
     }
 
     @include desktop {
-        display: none;
+      display: none;
     }
   }
 
