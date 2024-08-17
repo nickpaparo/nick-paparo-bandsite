@@ -22,14 +22,16 @@
             />
           </a>
         </div>
-        <ul class="nav__list">
-          <div class="nav__list-cta">
-            <li class="nav__bio-cta"><a href="../index.html"></a>Biography</li>
-          </div>
-          <div class="nav__list-cta nav__list-cta--active">
-            <li class="nav__shows-cta"><a href="./shows.html"></a>Shows</li>
-          </div>
-        </ul>
+        <div class="nav__list">
+          <ul class="nav__list-cta">
+            <li class="nav__bio-cta"><a class="nav__copy" href="../index.html">Biography</a></li>
+          </ul>
+          <ul class="nav__list-cta nav__list-cta--active">
+            <li class="nav__shows-cta">
+              <a class="nav__copy nav__copy--active" href="./pages/shows.html">Shows</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
     <main>
@@ -143,12 +145,13 @@
         </div>
       </div>
       <div class="footer__logo-container">
-        <a href="../index.html"></a>
-        <img
-          class="footer__logo"
-          src="../assets/logos/Logo-bandsite.svg"
-          alt="Bandsite logo"
-        />
+        <a href="../index.html">
+          <img
+            class="footer__logo"
+            src="../assets/logos/Logo-bandsite.svg"
+            alt="Bandsite logo"
+          />
+        </a>
       </div>
       <div class="footer__copyright-container">
         <p class="footer__copyright">

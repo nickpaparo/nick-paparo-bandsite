@@ -1,98 +1,103 @@
-const comments = [
-  {
-    name: `Victor Pinto`,
-    time: `11/02/2023`,
-    comment: `This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.
-`,
-  },
-  {
-    name: `Chsitina Cabrera`,
-    time: `10/28/2023`,
-    comment: `I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day`,
-  },
-  {
-    name: `Isaac Tadesse`,
-    time: `10/20/2023`,
-    comment: `I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.`,
-  },
-];
+const API_KEY = "a817234e-74ad-4433-89c0-1128cd9ffde6";
+const commentsApi = new BandSiteApi(API_KEY);
 
-function createCommentCard(comments) {
-  const commentElement = document.createElement("div");
-  commentElement.classList.add("comments__new");
+async function commentsApiCall() {
+  try {
+    const commentsResults = await commentsApi.getComments();
+    renderComments(commentsResults);
+    return commentsResults;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-  const avatarContainer = document.createElement("div");
-  avatarContainer.classList.add("comments__new-avatar");
+commentsApiCall();
 
-  const avatarImage = document.createElement("img");
-  avatarImage.classList.add("comments__newavatarimg");
-  console.log(avatarImage);
+async function createCommentCard() {
+  try {
+    const commentsCall = await commentsApi.getComments();
+    commentsCall.sort((a, b) => {
+      return b.timestamp - a.timestamp;
+    });
 
-  const commentContainer = document.createElement("div");
-  commentContainer.classList.add("comments__new-comment");
+    commentsCall.forEach((comment) => {
+      const commentElement = document.createElement("div");
+      commentElement.classList.add("comments__new");
 
-  const headingContainer = document.createElement("div");
-  headingContainer.classList.add("comments__new-heading");
+      const avatarContainer = document.createElement("div");
+      avatarContainer.classList.add("comments__new-avatar");
 
-  const heading = document.createElement("h3");
-  heading.classList.add("comments__new-name");
-  heading.innerText = comments.name;
+      const avatarImage = document.createElement("img");
+      avatarImage.classList.add("comments__newavatarimg");
 
-  const timeElement = document.createElement("div");
-  timeElement.classList.add("comments__new-time");
-  timeElement.innerText = comments.time;
+      const commentContainer = document.createElement("div");
+      commentContainer.classList.add("comments__new-comment");
 
-  const commentCopy = document.createElement("p");
-  commentCopy.classList.add("comments__new-copy");
-  commentCopy.innerText = comments.comment;
+      const headingContainer = document.createElement("div");
+      headingContainer.classList.add("comments__new-heading");
 
-  commentElement.appendChild(avatarContainer);
-  avatarContainer.appendChild(avatarImage);
-  commentElement.appendChild(commentContainer);
-  commentContainer.appendChild(headingContainer);
-  headingContainer.appendChild(heading);
-  headingContainer.appendChild(timeElement);
-  commentContainer.appendChild(commentCopy);
+      const heading = document.createElement("h3");
+      heading.classList.add("comments__new-name");
+      heading.innerText = comment.name;
 
-  return commentElement;
+      const timeElement = document.createElement("div");
+      timeElement.classList.add("comments__new-time");
+      const localDate = new Date(comment.timestamp);
+      let day = localDate.getDate();
+      let month = localDate.getMonth() + 1;
+      let year = localDate.getFullYear();
+      timeElement.innerText = `${month}/${day}/${year}`;
+
+      const commentCopy = document.createElement("p");
+      commentCopy.classList.add("comments__new-copy");
+      commentCopy.innerText = comment.comment;
+
+      newCommentsElement.appendChild(commentElement);
+      commentElement.appendChild(avatarContainer);
+      avatarContainer.appendChild(avatarImage);
+      commentElement.appendChild(commentContainer);
+      commentContainer.appendChild(headingContainer);
+      headingContainer.appendChild(heading);
+      headingContainer.appendChild(timeElement);
+      commentContainer.appendChild(commentCopy);
+    });
+  } catch (error) {
+    console.log();
+  }
 }
 
 const newCommentsElement = document.querySelector(".comments__new-container");
 
-for (let i = 0; i < comments.length; i++) {
-  const commentCard = createCommentCard(comments[i]);
-  newCommentsElement.appendChild(commentCard);
-}
+// for (let i = 0; i < commentsArray.length; i++) {
+//   const commentCard = createCommentCard(commentsArray[i]);
+//   newCommentsElement.appendChild(commentCard);
+// }
 
 const formElement = document.querySelector("#comments-form");
 
-formElement.addEventListener("submit", (event) => {
+formElement.addEventListener("submit", async (event) => {
   event.preventDefault();
-  let userName = event.target.name.value;
-  const userTime = new Date();
-  const timestamp = userTime.toLocaleDateString();
-  let userComment = event.target.comment.value;
+
+  const userName = event.target.name.value;
+  const userComment = event.target.comment.value;
 
   const cardData = {
     name: userName,
-    time: timestamp,
     comment: userComment,
   };
 
-  comments.unshift(cardData);
+  await commentsApi.postComment(cardData);
+  try {
+    event.target.reset();
+  } catch (error) {}
 
-  renderComments();
+  renderComments(cardData);
 });
 
-let renderComments = () => {
-  const formElement = document.querySelector(".comments__new-container");
-  formElement.replaceChildren();
-
-  for (let i = 0; i < comments.length; i++) {
-    const commentCard = createCommentCard(comments[i]);
-    newCommentsElement.appendChild(commentCard);
-  }
+const renderComments = () => {
+  const commentsInjectionSite = document.querySelector(
+    ".comments__new-container"
+  );
+  commentsInjectionSite.replaceChildren();
+  createCommentCard();
 };
-
-renderComments();
-console.log(newCommentsElement);

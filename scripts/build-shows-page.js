@@ -1,44 +1,23 @@
-const showsArray = [
-  {
-    date: "Mon Sept 09 2024",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-    button_copy: "Buy tickets",
-  },
-  {
-    date: "Tue Sept 17 2024",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Oct 12 2024",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 16 2024",
-    venue: "Hyatt Regency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 29 2024",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 18 2024",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+const API_KEY = "a817234e-74ad-4433-89c0-1128cd9ffde6";
+const showsApi = new BandSiteApi(API_KEY);
 
-console.log(showsArray);
+async function showsApiCall() {
+  try {
+    const showsResults = await showsApi.getShows();
+    renderShows(showsResults);
+    return showsResults;
+  } catch (error) {
+    console.log(error);
+  }
+}
+showsApiCall();
 
 const newShowsCardElement = document.querySelector(".shows__card-container");
 
-function createShowsCard(shows) {
+function createShowsCard(showsRendered) {
   const showsCard = document.createElement("ul");
   showsCard.classList.add("shows__card");
+  showsCard.setAttribute("id", "shows-card");
 
   const showsSubheaderDate = document.createElement("li");
   showsSubheaderDate.classList.add("shows__subheader--mobile");
@@ -54,15 +33,16 @@ function createShowsCard(shows) {
 
   const showsDate = document.createElement("li");
   showsDate.classList.add("shows__details--bold");
-  showsDate.innerText = shows.date;
+  showsDate.innerText = showsRendered.date;
+  showsDate.innerText = new Date(showsRendered.date).toDateString();
 
   const showsVenue = document.createElement("li");
   showsVenue.classList.add("shows__details");
-  showsVenue.innerText = shows.venue;
+  showsVenue.innerText = showsRendered.place;
 
   const showsLocation = document.createElement("li");
   showsLocation.classList.add("shows__details");
-  showsLocation.innerText = shows.location;
+  showsLocation.innerText = showsRendered.location;
 
   const showsButton = document.createElement("button");
   showsButton.classList.add("shows__details--cta");
@@ -82,13 +62,13 @@ function createShowsCard(shows) {
   return showsCard;
 }
 
-let renderShows = () => {
+const renderShows = (showsRendered = []) => {
   const showsElement = document.querySelector(".shows__card-container");
   showsElement.innerHTML = "";
 
   const showsFragment = document.createDocumentFragment();
 
-  showsArray.forEach((show) => {
+  showsRendered.forEach((show) => {
     const showsCard = createShowsCard(show);
     showsFragment.appendChild(showsCard);
   });
@@ -97,4 +77,17 @@ let renderShows = () => {
 
 renderShows();
 
-console.log(renderShows);
+
+document.addEventListener("DOMLoaded", function () {
+  const showsCard = document.querySelector(".shows__card");
+
+  if (showsCard) {
+    showsCard.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.target.classList.toggle("shows__card--active");
+    });
+  } else {
+    console.log(error);
+  }
+});
+

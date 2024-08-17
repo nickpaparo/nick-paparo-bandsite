@@ -81,22 +81,20 @@
   &__list-cta {
     display: flex;
     align-items: center;
-    width: 50%;
     justify-content: center;
     padding-bottom: 0.8rem;
     margin-top: 0.875rem;
     color: $mercury;
+    width: 50%;
 
     &:hover {
       border-bottom: $white 5px solid;
-      color: $white;
       cursor: pointer;
       font-weight: 500;
     }
 
     &--active {
       font-weight: 700;
-      color: $white;
       border-bottom: $white 5px solid;
     }
 
@@ -110,7 +108,7 @@
         cursor: pointer;
         font-weight: 500;
       }
-  
+
       &--active {
         font-weight: 700;
         color: $white;
@@ -120,7 +118,6 @@
   }
 
   &__bio-cta {
-    @include nav_copy;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,6 +130,25 @@
     align-items: center;
     justify-content: center;
     max-width: 50vh;
+
+    @include tablet {
+      @include nav_copy_tablet;
+    }
+  }
+
+  &__copy {
+    @include nav_copy;
+    color: $mercury;
+    text-decoration: none;
+
+    &:hover {
+      color: $white;
+    }
+
+    &--active {
+      color: $white;
+    }
+
   }
 }
 

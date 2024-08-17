@@ -23,11 +23,11 @@
   height: 45vw;
 
   @include tablet {
-    height: 40vw;
+    height: 60vw;
   }
 
   @include desktop {
-    height: 40vw;
+    height: 42vw;
   }
 
   &__copy-container {
@@ -266,13 +266,13 @@
     margin-bottom: 1rem;
 
     @include tablet {
-      max-width: calc(31% - 2.25rem);
+      max-width: calc(35% - 2.25rem);
       width: 32%;
       margin: 0;
     }
 
     @include desktop {
-      max-width: calc(41% - 9rem);
+      max-width: calc(43.5% - 9rem);
       width: 34%;
       margin: 0;
     }
@@ -297,8 +297,6 @@
   }
 
   &__header-container {
-    
-
     @include tablet {
       margin-left: 0;
     }
@@ -327,7 +325,6 @@
     @include tablet {
       display: flex;
       justify-content: center;
-
     }
 
     @include desktop {
@@ -374,11 +371,6 @@
       max-width: 3rem;
       display: flex;
       justify-content: center;
-    }
-
-    @include desktop {
-      height: 4vw;
-      width: 4vw;
     }
   }
 
@@ -482,7 +474,6 @@
     min-width: 88.75%;
 
     @include tablet {
-
     }
 
     @include desktop {
@@ -510,7 +501,6 @@
     background-color: $mercury;
     min-height: 100%;
     min-width: 100%;
-    background-image: url(../assets/images/Mohan-muruge.jpg);
     object-fit: cover;
   }
 
@@ -524,7 +514,6 @@
     }
 
     @include desktop {
-
     }
   }
 
@@ -532,7 +521,6 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 0.5rem;
-
   }
 
   &__new-name {
