@@ -13,6 +13,14 @@ async function commentsApiCall() {
 
 commentsApiCall();
 
+const renderComments = () => {
+  const commentsInjectionSite = document.querySelector(
+    ".comments__new-container"
+  );
+  commentsInjectionSite.replaceChildren();
+  createCommentCard();
+};
+
 async function createCommentCard() {
   try {
     const commentsCall = await commentsApi.getComments();
@@ -68,11 +76,6 @@ async function createCommentCard() {
 
 const newCommentsElement = document.querySelector(".comments__new-container");
 
-// for (let i = 0; i < commentsArray.length; i++) {
-//   const commentCard = createCommentCard(commentsArray[i]);
-//   newCommentsElement.appendChild(commentCard);
-// }
-
 const formElement = document.querySelector("#comments-form");
 
 formElement.addEventListener("submit", async (event) => {
@@ -94,10 +97,3 @@ formElement.addEventListener("submit", async (event) => {
   renderComments(cardData);
 });
 
-const renderComments = () => {
-  const commentsInjectionSite = document.querySelector(
-    ".comments__new-container"
-  );
-  commentsInjectionSite.replaceChildren();
-  createCommentCard();
-};

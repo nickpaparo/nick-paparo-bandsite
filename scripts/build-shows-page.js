@@ -77,17 +77,15 @@ const renderShows = (showsRendered = []) => {
 
 renderShows();
 
-
 document.addEventListener("DOMLoaded", function () {
   const showsCard = document.querySelector(".shows__card");
 
   if (showsCard) {
     showsCard.addEventListener("click", function (event) {
       event.preventDefault();
-      event.target.classList.toggle("shows__card--active");
+      showsCard.classList.toggle("shows__card--active");
     });
   } else {
     console.log(error);
   }
 });
-
